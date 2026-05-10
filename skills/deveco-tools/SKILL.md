@@ -1,6 +1,6 @@
 ---
-name: deveco-tools
-description: DevEco/HDC tools for this HarmonyOS workspace: rerun, clean-rerun, build, install, launch, logs, device status, and recovery commands.
+name: "deveco-tools"
+description: "DevEco/HDC tools for this HarmonyOS workspace: rerun, clean-rerun, build, install, launch, logs, device status, and recovery commands."
 ---
 
 # DevEco Tools
@@ -417,9 +417,9 @@ Reboot is a last-resort recovery step, not part of normal rerun.
 
 If the user asks whether the app is running or needs process inspection, inspect the device state before changing anything.
 
-  - use `dump` for ability state
-  - use `shell` for process and storage inspection
-  - use `logs` for runtime errors
+- use `dump` for ability state
+- use `shell` for process and storage inspection
+- use `logs` for runtime errors
 
 Prefer observation first, then recovery.
 
