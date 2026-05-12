@@ -3,5 +3,5 @@
 Add the `deveco-tools` skill with:
 
 ```bash
-npx skills add git@github.com:rming/skills.git --skill deveco-tools
+npx skills add https://github.com/rming/skills --skill deveco-tools
 ```
