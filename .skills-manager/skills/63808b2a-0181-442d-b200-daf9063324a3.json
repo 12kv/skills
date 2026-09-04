@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "63808b2a-0181-442d-b200-daf9063324a3",
+  "path": "harmony-next",
+  "path_key": "harmony-next",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "linhay/harmony-next.skills/harmony-next",
+    "subpath": "harmony-next",
+    "branch": null
+  }
+}

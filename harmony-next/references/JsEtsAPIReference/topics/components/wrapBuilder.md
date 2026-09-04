@@ -1,6 +1,6 @@
 # wrapBuilder
 
-使用wrapBuilder封装全局@Builder，可以帮助维护代码。开发指南见[wrapBuilder：封装全局@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbuilder)。
+使用wrapBuilder封装全局@Builder，可以帮助维护代码。开发指南见[wrapBuilder：封装全局@Builder](../../guides/wrapBuilder：封装全局@Builder.md)。
 
 本模块首批接口从API version 11开始支持。
 

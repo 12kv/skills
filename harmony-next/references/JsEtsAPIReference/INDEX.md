@@ -174,12 +174,14 @@ guides/@Reusable装饰器：V1组件复用.md
 guides/Ability Kit术语.md
 guides/AppStorageV2（应用全局的UI状态存储）.md
 guides/Connectivity Kit术语.md
+guides/Environment：设备环境查询.md
 guides/ExtensionAbility组件.md
 guides/MDM Kit开发指南.md
 guides/MDM Kit术语.md
 guides/NFC标签读写开发指南.md
 guides/PersistenceV2（持久化存储UI状态）.md
 guides/Sendable对象简介.md
+guides/UIAbility备份恢复.md
 guides/UIAbility组件启动模式.md
 guides/UIAbility组件基本用法.md
 guides/UI国际化.md
@@ -192,6 +194,8 @@ guides/bm工具.md
 guides/if-else：条件渲染.md
 guides/makeObserved接口：将非观察数据变为可观察数据.md
 guides/module.json5配置文件.md
+guides/wrapBuilder：封装全局@Builder.md
+guides/云侧服务准备.md
 guides/交互基础机制说明.md
 guides/代理提醒（ArkTS）.md
 guides/使用Picker选择媒体库资源.md
@@ -206,6 +210,7 @@ guides/向用户申请授权.md
 guides/启动应用内的UIAbility组件.md
 guides/图片解码内存优化.md
 guides/基于服务账号生成鉴权令牌.md
+guides/基于服务账号生成鉴权令牌（Device Security）.md
 guides/声明权限.md
 guides/多应用管控.md
 guides/安全控件概述.md
@@ -213,23 +218,29 @@ guides/应用上下文Context.md
 guides/应用启动框架AppStartup.md
 guides/应用沙箱目录.md
 guides/开发准备（媒体库）.md
+guides/开放权限（用户授权）.md
 guides/开通Device Security服务.md
 guides/支持单复数.md
 guides/支持的语言.md
+guides/支持键盘输入事件.md
 guides/数据库备份与恢复.md
 guides/日志分析.md
+guides/智能填充服务.md
 guides/查询当前状态场景.md
 guides/栅格布局 (GridRow-GridCol).md
 guides/消息认证码计算HMAC.md
 guides/状态管理V1-V2迁移指导.md
 guides/状态管理V1和V2混用指导（API version 19及之后）.md
 guides/状态管理概述.md
+guides/用户文件URI介绍.md
 guides/申请受限权限.md
+guides/申请推送场景化消息权益.md
 guides/申请访问剪贴板权限.md
 guides/窗口开发术语.md
 guides/线程间通信对象概述.md
 guides/组件启动规则（FA模型）.md
 guides/组件启动规则（Stage模型）.md
+guides/耗时任务并发场景简介.md
 guides/自定义渲染（XComponent）.md
 guides/自定义节点概述.md
 guides/获取Push Token.md
@@ -239,6 +250,7 @@ guides/资源分类与访问.md
 guides/通过用户首选项实现数据持久化.md
 guides/通过键值型数据库实现数据持久化.md
 guides/配置ArkTS卡片的配置文件.md
+guides/非对称密钥生成和转换规格.md
 guides/预览流二次处理（C-C++）.md
 guides/（可选）开发消息回执.md
 guides/（可选）配置应用内购买服务参数.md

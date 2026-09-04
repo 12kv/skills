@@ -143,7 +143,7 @@ struct Index {
 
 update(args: T): void
 
-用于更新[WrappedBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbuilder)对象封装的builder函数参数，与constructor传入的参数类型保持一致。
+用于更新[WrappedBuilder](../../guides/wrapBuilder：封装全局@Builder.md)对象封装的builder函数参数，与constructor传入的参数类型保持一致。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1368,7 +1368,7 @@ struct FrameNodeTypeTest {
 
 flushState(): void
 
-更新ReactiveComponentContent。当ReactiveComponentContent中[WrappedBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbuilder)对象封装的builder函数中使用的绑定参数是由V1装饰器（如@Observed）装饰的类实例时，需要在此类数据变更后手动调用本接口更新数据，当使用V2装饰器（如@ObservedV2）装饰的类实例时，支持自动更新，无需手动调用。
+更新ReactiveComponentContent。当ReactiveComponentContent中[WrappedBuilder](../../guides/wrapBuilder：封装全局@Builder.md)对象封装的builder函数中使用的绑定参数是由V1装饰器（如@Observed）装饰的类实例时，需要在此类数据变更后手动调用本接口更新数据，当使用V2装饰器（如@ObservedV2）装饰的类实例时，支持自动更新，无需手动调用。
 
 元服务API： 从API version 22开始，该接口支持在元服务中使用。
 

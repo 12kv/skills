@@ -27,11 +27,15 @@
 
 ## IDE & Development
 - 推荐目录: ideGuides/
+- 私有未公开接口入口：`ideGuides/DevEco模拟器私有接口与AI自动化.md`
+- IDE 私有未公开接口入口：`ideGuides/DevEco Studio IDE私有接口与AI自动化.md`
 - Keywords: 签名, Signing, 证书, Profile
 - Keywords: 模拟器, Emulator, Simulator, 真机, 运行
 - Keywords: 调试, Debug, 断点, LLDB
 - Keywords: 日志, Log, HiLog, 故障分析, FaultLog
 - Keywords: 命令行, CLI, hdc, ohpm, hvigor, 自动化
+- Keywords: DevEco Studio, HarmonyOS Emulator, uitest, aa, bm, hidumper, 私有接口, 免 IDE 启动, HVD
+- Keywords: DevEco Studio IDE, CodeGenie, MCP, LanceDB, devecostudio://, ArkUI Inspector, Previewer, Profiler, Doctor, Diagnostic, FaultLog, UxTestService
 - Keywords: 独立工具包, Standalone CLI, OHOS_BASE_SDK_HOME, 环境变量, CI/CD配置
 - 快速命中: `rg -n "(签名|Signing|hdc|hvigor|ohpm|LLDB|HiLog)" INDEX.md | rg \"^ideGuides/\" | head`
 

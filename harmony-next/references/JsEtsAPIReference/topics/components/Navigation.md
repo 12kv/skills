@@ -536,7 +536,7 @@ recoverable(recoverable: Optional<boolean>)
 
 1. 恢复的过程中不可序列化的信息，例如不可序列化的参数与用户设置的onPop等，会被丢弃，无法恢复。
 
-1. 当应用退到后台，因系统资源不足等原因被系统终止后，如果某页面已配置为可恢复，当应用再次被唤醒至前台时，系统将自动恢复该页面。详细说明请参考[UIAbility备份恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-recover-guideline)，详细使用请参考[示例18](#ZH-CN_TOPIC_0000002553360755__示例18设置navigation可恢复)。
+1. 当应用退到后台，因系统资源不足等原因被系统终止后，如果某页面已配置为可恢复，当应用再次被唤醒至前台时，系统将自动恢复该页面。详细说明请参考[UIAbility备份恢复](../../guides/UIAbility备份恢复.md)，详细使用请参考[示例18](#ZH-CN_TOPIC_0000002553360755__示例18设置navigation可恢复)。
 
 系统能力： SystemCapability.ArkUI.ArkUI.Full
 
@@ -5209,7 +5209,7 @@ export struct PageTwo {
 
 **示例18（设置Navigation可恢复）**
 
-该示例演示如何使用[recoverable](#ZH-CN_TOPIC_0000002553360755__recoverable14)配置Navigation可恢复，需要开发者在应用模块初始化时启用[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)的备份恢复功能，可参考[UIAbility备份恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-recover-guideline)。
+该示例演示如何使用[recoverable](#ZH-CN_TOPIC_0000002553360755__recoverable14)配置Navigation可恢复，需要开发者在应用模块初始化时启用[UIAbility](@ohos.app.ability.UIAbility (带界面的应用组件).md)的备份恢复功能，可参考[UIAbility备份恢复](../../guides/UIAbility备份恢复.md)。
 
 从API version 14开始，新增recoverable接口。
 

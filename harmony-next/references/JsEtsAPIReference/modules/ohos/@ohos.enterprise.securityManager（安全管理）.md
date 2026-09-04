@@ -769,7 +769,7 @@ try {
 
 setPermissionManagedState(admin: Want, applicationInstance: ApplicationInstance, permissions: Array<string>, managedState: PermissionManagedState): void
 
-设置指定应用的[user_grant权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-user)的管理策略。
+设置指定应用的[user_grant权限](../../guides/开放权限（用户授权）.md)的管理策略。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_USER_GRANT_PERMISSION
 
@@ -830,7 +830,7 @@ try {
 
 getPermissionManagedState(admin: Want, applicationInstance: ApplicationInstance, permission: string): PermissionManagedState
 
-获取指定应用的指定[user_grant权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-user)的管理策略。
+获取指定应用的指定[user_grant权限](../../guides/开放权限（用户授权）.md)的管理策略。
 
 **需要权限：** ohos.permission.ENTERPRISE_MANAGE_USER_GRANT_PERMISSION
 

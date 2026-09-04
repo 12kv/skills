@@ -245,7 +245,7 @@ export default class MyAbility extends UIAbility {
 
 #### OnSaveResult
 
-保存应用数据的结果，该类型为枚举。配合UIAbility的[onSaveState()](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onsavestate)方法使用，可以实现[UIAbility备份恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-recover-guideline)。
+保存应用数据的结果，该类型为枚举。配合UIAbility的[onSaveState()](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onsavestate)方法使用，可以实现[UIAbility备份恢复](../../guides/UIAbility备份恢复.md)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
@@ -273,7 +273,7 @@ export default class MyAbility extends UIAbility {
 
 #### StateType
 
-保存应用数据场景原因，该类型为枚举。配合UIAbility的[onSaveState()](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onsavestate)方法使用，可以实现[UIAbility备份恢复](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-recover-guideline)。
+保存应用数据场景原因，该类型为枚举。配合UIAbility的[onSaveState()](@ohos.app.ability.UIAbility (带界面的应用组件).md#ZH-CN_TOPIC_0000002522240540__onsavestate)方法使用，可以实现[UIAbility备份恢复](../../guides/UIAbility备份恢复.md)。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 

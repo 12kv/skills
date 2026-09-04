@@ -18,7 +18,7 @@ deleteToTrash(uri: string): Promise<string>
 
    ![image](public_sys-resources/caution_3.0-zh-cn.webp)
 
-此接口参数uri的具体使用方式参见用户文件uri介绍中的[文档类URI的使用方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#文档类uri)。
+此接口参数uri的具体使用方式参见用户文件uri介绍中的[文档类URI的使用方式](../../guides/用户文件URI介绍.md#文档类uri)。
 
 系统能力：SystemCapability.FileManagement.FileManagerService.Core
 

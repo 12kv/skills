@@ -17,7 +17,7 @@ select(option?: PhotoSelectOptions) : Promise<PhotoSelectResult>
 通过选择模式拉起photoPicker界面，用户可以选择一个或多个图片/视频。使用Promise异步回调。传入可选参数PhotoSelectOptions对象，返回PhotoSelectResult对象。
 
 
-此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002553362013__getassets)去使用。具体操作请参考[媒体文件URI的使用方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri的使用方式)。
+此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002553362013__getassets)去使用。具体操作请参考[媒体文件URI的使用方式](../../guides/用户文件URI介绍.md#媒体文件uri的使用方式)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -74,7 +74,7 @@ select(option: PhotoSelectOptions, callback: AsyncCallback<PhotoSelectResult>) :
 通过选择模式拉起photoPicker界面，用户可以选择一个或多个图片/视频。接口采用callback异步返回形式，传入参数PhotoSelectOptions对象，返回PhotoSelectResult对象。
 
 
-此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002553362013__getassets)去使用。具体操作请参考[媒体文件URI的使用方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri的使用方式)。
+此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002553362013__getassets)去使用。具体操作请参考[媒体文件URI的使用方式](../../guides/用户文件URI介绍.md#媒体文件uri的使用方式)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -128,7 +128,7 @@ select(callback: AsyncCallback<PhotoSelectResult>) : void
 通过选择模式拉起photoPicker界面，用户可以选择一个或多个图片/视频。接口采用callback异步返回形式，返回PhotoSelectResult对象。
 
 
-此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002553362013__getassets)去使用。具体操作请参考[媒体文件URI的使用方式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri的使用方式)。
+此接口返回的PhotoSelectResult对象中的photoUris具有永久授权，可通过调用接口[photoAccessHelper.getAssets](Interface (PhotoAccessHelper).md#ZH-CN_TOPIC_0000002553362013__getassets)去使用。具体操作请参考[媒体文件URI的使用方式](../../guides/用户文件URI介绍.md#媒体文件uri的使用方式)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

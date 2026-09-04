@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "d9c4d80c-0bc8-4455-b102-50e120440bd7",
+  "path": "diagnosing-bugs",
+  "path_key": "diagnosing-bugs",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "mattpocock/skills/diagnosing-bugs",
+    "subpath": "skills/engineering/diagnosing-bugs",
+    "branch": null
+  }
+}

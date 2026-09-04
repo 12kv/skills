@@ -196,6 +196,20 @@ TARGETED_GUIDE_MAPPING = {
     "uiability-intra-device-interaction": TargetedGuideMapping(Path("guides/启动应用内的UIAbility组件.md")),
     "mdm-kit-term": TargetedGuideMapping(Path("guides/MDM Kit术语.md")),
     "web-file-upload": TargetedGuideMapping(Path("guides/使用Web组件上传文件.md")),
+    "user-file-uri-intro": TargetedGuideMapping(Path("guides/用户文件URI介绍.md")),
+    "time-consuming-task-overview": TargetedGuideMapping(Path("guides/耗时任务并发场景简介.md")),
+    "scenario-fusion-intelligent-filling": TargetedGuideMapping(Path("guides/智能填充服务.md")),
+    "push-apply-right": TargetedGuideMapping(Path("guides/申请推送场景化消息权益.md")),
+    "permissions-for-all-user": TargetedGuideMapping(Path("guides/开放权限（用户授权）.md")),
+    "payment-server-connect": TargetedGuideMapping(Path("guides/云侧服务准备.md")),
+    "devicesecurity-deviceverify-token": TargetedGuideMapping(
+        Path("guides/基于服务账号生成鉴权令牌（Device Security）.md")
+    ),
+    "crypto-asym-key-generation-conversion-spec": TargetedGuideMapping(Path("guides/非对称密钥生成和转换规格.md")),
+    "arkts-wrapbuilder": TargetedGuideMapping(Path("guides/wrapBuilder：封装全局@Builder.md")),
+    "arkts-interaction-development-guide-keyboard": TargetedGuideMapping(Path("guides/支持键盘输入事件.md")),
+    "arkts-environment": TargetedGuideMapping(Path("guides/Environment：设备环境查询.md")),
+    "ability-recover-guideline": TargetedGuideMapping(Path("guides/UIAbility备份恢复.md")),
 }
 
 

@@ -2408,7 +2408,7 @@ struct Index {
 
 flushState(): void
 
-根据提供的参数更新ReactiveBuilderNode。当ReactiveBuilderNode中[WrappedBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbuilder)对象封装的builder函数中使用的绑定参数是由V1装饰器（如@Observed）装饰的类实例时，需要在此类数据变更后手动调用此方法以更新数据，当使用V2装饰器（如@ObservedV2）装饰的类实例时，支持自动更新，无需手动调用。
+根据提供的参数更新ReactiveBuilderNode。当ReactiveBuilderNode中[WrappedBuilder](../../guides/wrapBuilder：封装全局@Builder.md)对象封装的builder函数中使用的绑定参数是由V1装饰器（如@Observed）装饰的类实例时，需要在此类数据变更后手动调用此方法以更新数据，当使用V2装饰器（如@ObservedV2）装饰的类实例时，支持自动更新，无需手动调用。
 
 元服务API： 从API version 22开始，该接口支持在元服务中使用。
 

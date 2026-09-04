@@ -268,6 +268,35 @@ class ReferenceCompatTests(unittest.TestCase):
             ),
             encoding="utf-8",
         )
+        (self.js_root / "modules" / "ohos" / "@ohos.batch5-guide.md").write_text(
+            (
+                "[用户文件URI介绍]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-file-uri-intro#媒体文件uri的使用方式)\n"
+                "[耗时任务并发场景简介]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/time-consuming-task-overview)\n"
+                "[智能填充服务]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-intelligent-filling)\n"
+                "[申请推送语音播报消息权益]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-apply-right#申请推送语音播报消息权益)\n"
+                "[开放权限]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-user#ohospermissionlocation_in_background)\n"
+                "[云侧服务准备]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-server-connect#集成maven依赖)\n"
+                "[DeviceVerify鉴权令牌]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurity-deviceverify-token#示例代码)\n"
+                "[非对称密钥生成和转换规格]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#ecc)\n"
+                "[wrapBuilder]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbuilder)\n"
+                "[按键事件数据流]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interaction-development-guide-keyboard#按键事件数据流)\n"
+                "[Environment]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-environment#从ui中访问environment参数)\n"
+                "[UIAbility备份恢复]"
+                "(https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-recover-guideline)\n"
+            ),
+            encoding="utf-8",
+        )
         (self.js_root / "modules" / "ohos" / "@ohos.arkui.StateManagement (状态管理).md").write_text(
             "# @ohos.arkui.StateManagement (状态管理)\n",
             encoding="utf-8",
@@ -567,6 +596,22 @@ class ReferenceCompatTests(unittest.TestCase):
         }
         for name, content in batch4_guides.items():
             (self.js_root / "guides" / name).write_text(content, encoding="utf-8")
+        batch5_guides = {
+            "用户文件URI介绍.md": "# 用户文件URI介绍\n\n## 媒体文件URI的使用方式\n",
+            "耗时任务并发场景简介.md": "# 耗时任务并发场景简介\n",
+            "智能填充服务.md": "# 智能填充服务\n",
+            "申请推送场景化消息权益.md": "# 申请推送场景化消息权益\n\n## 申请推送语音播报消息权益\n",
+            "开放权限（用户授权）.md": "# 开放权限（用户授权）\n\n## ohos.permission.LOCATION_IN_BACKGROUND\n",
+            "云侧服务准备.md": "# 云侧服务准备\n\n## 集成Maven依赖\n",
+            "基于服务账号生成鉴权令牌（Device Security）.md": "# 基于服务账号生成鉴权令牌\n\n## 示例代码\n",
+            "非对称密钥生成和转换规格.md": "# 非对称密钥生成和转换规格\n\n## ECC\n",
+            "wrapBuilder：封装全局@Builder.md": "# wrapBuilder：封装全局@Builder\n",
+            "支持键盘输入事件.md": "# 支持键盘输入事件\n\n## 按键事件数据流\n",
+            "Environment：设备环境查询.md": "# Environment：设备环境查询\n\n## 从UI中访问Environment参数\n",
+            "UIAbility备份恢复.md": "# UIAbility备份恢复\n",
+        }
+        for name, content in batch5_guides.items():
+            (self.js_root / "guides" / name).write_text(content, encoding="utf-8")
         (self.js_root / "topics" / "components" / "应用级变量的状态管理.md").write_text(
             "# 应用级变量的状态管理\n",
             encoding="utf-8",
@@ -631,7 +676,7 @@ class ReferenceCompatTests(unittest.TestCase):
         MODULE.generate_index(self.paths)
 
         self.assertEqual(rewritten, 1)
-        self.assertEqual(guide_rewritten, 11)
+        self.assertEqual(guide_rewritten, 12)
         self.assertIn(
             "../../topics/misc/native_handwrite_api.h.md",
             (self.js_root / "topics" / "misc" / "HandWrite.md").read_text(encoding="utf-8"),
@@ -946,6 +991,22 @@ class ReferenceCompatTests(unittest.TestCase):
             "../../guides/使用Web组件上传文件.md#自定义处理js接口拉起的文件请求",
         ]:
             self.assertIn(expected, batch4_text)
+        batch5_text = (self.js_root / "modules" / "ohos" / "@ohos.batch5-guide.md").read_text(encoding="utf-8")
+        for expected in [
+            "../../guides/用户文件URI介绍.md#媒体文件uri的使用方式",
+            "../../guides/耗时任务并发场景简介.md",
+            "../../guides/智能填充服务.md",
+            "../../guides/申请推送场景化消息权益.md#申请推送语音播报消息权益",
+            "../../guides/开放权限（用户授权）.md#ohospermissionlocation_in_background",
+            "../../guides/云侧服务准备.md#集成maven依赖",
+            "../../guides/基于服务账号生成鉴权令牌（Device Security）.md#示例代码",
+            "../../guides/非对称密钥生成和转换规格.md#ecc",
+            "../../guides/wrapBuilder：封装全局@Builder.md",
+            "../../guides/支持键盘输入事件.md#按键事件数据流",
+            "../../guides/Environment：设备环境查询.md#从ui中访问environment参数",
+            "../../guides/UIAbility备份恢复.md",
+        ]:
+            self.assertIn(expected, batch5_text)
         self.assertIn(
             "../components/ForEach.md",
             (self.js_root / "topics" / "misc" / "rendering-guide.md").read_text(encoding="utf-8"),
@@ -1012,6 +1073,7 @@ class ReferenceCompatTests(unittest.TestCase):
         self.assertIn("guides/NFC标签读写开发指南.md", index_lines)
         self.assertIn("guides/代理提醒（ArkTS）.md", index_lines)
         self.assertIn("guides/日志分析.md", index_lines)
+        self.assertIn("guides/用户文件URI介绍.md", index_lines)
         self.assertNotIn("capi/headers/native_handwrite_api.h.md", index_lines)
         references_index_lines = self.paths.references_index.read_text(encoding="utf-8").splitlines()
         self.assertIn("JsEtsAPIReference/topics/misc/native_handwrite_api.h.md", references_index_lines)
@@ -1021,6 +1083,7 @@ class ReferenceCompatTests(unittest.TestCase):
         self.assertIn("JsEtsAPIReference/guides/NFC标签读写开发指南.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/代理提醒（ArkTS）.md", references_index_lines)
         self.assertIn("JsEtsAPIReference/guides/日志分析.md", references_index_lines)
+        self.assertIn("JsEtsAPIReference/guides/用户文件URI介绍.md", references_index_lines)
         self.assertIn("quickStart/intro.md", references_index_lines)
 
     def test_check_detects_index_drift(self) -> None:

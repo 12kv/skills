@@ -2039,7 +2039,7 @@ createAsyKeyGenerator(algName: string): AsyKeyGenerator
 
 通过指定算法名称的字符串，获取相应的非对称密钥生成器实例。
 
-支持的规格详见[非对称密钥生成和转换规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec)。
+支持的规格详见[非对称密钥生成和转换规格](../../guides/非对称密钥生成和转换规格.md)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3462,7 +3462,7 @@ function testGeneratePubKeySync() {
 
 static genECCCommonParamsSpec(curveName: string): ECCCommonParamsSpec
 
-根据椭圆曲线相应的NID（Name Identifier）字符串名称生成相应的非对称公共密钥参数。详见[ECC密钥生成规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#ecc)和[SM2密钥生成规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#sm2)。
+根据椭圆曲线相应的NID（Name Identifier）字符串名称生成相应的非对称公共密钥参数。详见[ECC密钥生成规格](../../guides/非对称密钥生成和转换规格.md#ecc)和[SM2密钥生成规格](../../guides/非对称密钥生成和转换规格.md#sm2)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3623,7 +3623,7 @@ async function doTest() {
 
 static genDHCommonParamsSpec(pLen: number, skLen?: number): DHCommonParamsSpec
 
-根据素数P的长度和私钥长度（bit位数）生成DH公共密钥参数。详见[DH密钥生成规格](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-asym-key-generation-conversion-spec#dh)。
+根据素数P的长度和私钥长度（bit位数）生成DH公共密钥参数。详见[DH密钥生成规格](../../guides/非对称密钥生成和转换规格.md#dh)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

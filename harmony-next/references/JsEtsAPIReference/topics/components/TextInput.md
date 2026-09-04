@@ -630,7 +630,7 @@ customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: Ke
 
 enableAutoFill(value: boolean)
 
-设置是否启用自动填充。典型场景参考[密码自动填充服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault)、[智能填充服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-intelligent-filling)。
+设置是否启用自动填充。典型场景参考[密码自动填充服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault)、[智能填充服务](../../guides/智能填充服务.md)。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
@@ -745,7 +745,7 @@ showCounter(value: boolean, options?: InputCounterOptions)
 
 contentType(value: ContentType)
 
-设置自动填充类型。典型场景参考[智能填充服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusion-intelligent-filling)。
+设置自动填充类型。典型场景参考[智能填充服务](../../guides/智能填充服务.md)。
 
 元服务API： 从API version 12开始，该接口支持在元服务中使用。
 
