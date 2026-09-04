@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "8ff7381c-e420-4399-a78b-d3714f0db1fe",
+  "path": "deveco-tools",
+  "path_key": "deveco-tools",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

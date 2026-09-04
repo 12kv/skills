@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "a87f4d24-fc39-424a-b806-54cf0dd9d7f4",
+  "path": "svg-diagram",
+  "path_key": "svg-diagram",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "ce517973-13e2-4013-af91-6e4a34c8b309",
+  "path": "license-keys",
+  "path_key": "license-keys",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "24541ebe-7503-4399-b2d0-5473345175bb",
+  "path": "engineer-expertise-extractor",
+  "path_key": "engineer-expertise-extractor",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}

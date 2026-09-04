@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "141be4f9-c89b-4136-b2b9-4440adb656de",
+  "path": "apple-hig-designer",
+  "path_key": "apple-hig-designer",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
