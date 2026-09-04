@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "a0363c09-ded3-42ad-8d16-8daa4b9c2719",
+  "path": "frontend-design",
+  "path_key": "frontend-design",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "anthropics/skills/frontend-design",
+    "subpath": "skills/frontend-design",
+    "branch": null
+  }
+}
