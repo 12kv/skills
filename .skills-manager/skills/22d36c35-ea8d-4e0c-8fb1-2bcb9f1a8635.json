@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "22d36c35-ea8d-4e0c-8fb1-2bcb9f1a8635",
+  "path": "mobile-android-design",
+  "path_key": "mobile-android-design",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "wshobson/agents/mobile-android-design",
+    "subpath": "plugins/ui-design/skills/mobile-android-design",
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "5c13a8ce-614f-4024-bc1c-3a10fd198c77",
+  "path": "android-kotlin",
+  "path_key": "android-kotlin",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "alinaqi/maggy/android-kotlin",
+    "subpath": "skills/android-kotlin",
+    "branch": null
+  }
+}
