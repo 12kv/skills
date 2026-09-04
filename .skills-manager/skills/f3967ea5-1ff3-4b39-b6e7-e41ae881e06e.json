@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "f3967ea5-1ff3-4b39-b6e7-e41ae881e06e",
+  "path": "r8-analyzer",
+  "path_key": "r8-analyzer",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "android/skills/r8-analyzer",
+    "subpath": "performance/r8-analyzer",
+    "branch": null
+  }
+}
