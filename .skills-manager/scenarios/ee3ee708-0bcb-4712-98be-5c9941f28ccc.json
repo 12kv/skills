@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "scenario_id": "ee3ee708-0bcb-4712-98be-5c9941f28ccc",
+  "name": "db",
+  "description": null,
+  "icon": "briefcase",
+  "sort_order": 999
+}

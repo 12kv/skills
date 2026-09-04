@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "fdb57377-5e86-472e-9183-896f800fe855",
+  "path": "sql-code-review",
+  "path_key": "sql-code-review",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "github/awesome-copilot/sql-code-review",
+    "subpath": "skills/sql-code-review",
+    "branch": null
+  }
+}
