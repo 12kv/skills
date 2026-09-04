@@ -51,3 +51,8 @@ package-lock.json
 bin/_chunks/
 bin/cli-wrapper.mjs
 bin/cli.d.mts
+Thumbs.db
+*.tmp
+.skills-manager.lock
+__pycache__/
+*.pyc
