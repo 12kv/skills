@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "skill_id": "a87f4d24-fc39-424a-b806-54cf0dd9d7f4",
+  "skill_id": "03115b4f-ccbc-43fb-922f-362ba1088c60",
   "path": "svg-diagram",
   "path_key": "svg-diagram",
   "enabled": true,
   "tags": [],
   "source": {
-    "type": "local",
-    "ref": null,
+    "type": "git",
+    "ref": "https://github.com/bybit-exchange/svg-diagram",
     "subpath": null,
     "branch": null
   }
