@@ -1,303 +1,136 @@
-# Swift Concurrency Glossary
+# Glossary
 
-Complete reference of Swift concurrency terms, keywords, and annotations.
+Use this when:
 
-## Keywords and Annotations
+- You need a quick definition of a Swift Concurrency term.
+- You encounter unfamiliar terminology in other reference files.
 
-### actor
-**Type**: Keyword
-**Usage**: Defines a reference type that protects mutable state
-**Introduced**: SE-0306 Actors
+Skip this file if:
 
-Actors define a unit of isolation. Each instance has its own isolation domain.
+- You need implementation patterns, not definitions. Use the relevant reference file instead.
 
-```swift
-actor BankAccount {
-  var balance: Double = 0
-  func deposit(_ amount: Double) { balance += amount }
-}
-```
+## Actor isolation
 
-### Actor
-**Type**: Protocol
-**Usage**: A protocol which all actor types conform to
-**Introduced**: SE-0306 Actors
+A rule enforced by the compiler: actor-isolated state can only be accessed from the actor's executor. Cross-actor access requires `await`.
 
-Like `AnyObject` but only for actor types. Used for isolated parameters.
+## Global actor
 
-### async
-**Type**: Keyword
-**Usage**: Applied to a function signature so it can use `await`
-**Introduced**: SE-0296 Async/await
+A shared isolation domain applied via attributes like `@MainActor` or a custom `@globalActor`. Types/functions isolated to the same global actor can interact without crossing isolation.
 
-Marks a function that might need to pause (suspend).
+## Default actor isolation
 
-### await
-**Type**: Keyword
-**Usage**: Marks a suspension point
-**Introduced**: SE-0296 Async/await
+A module/target-level setting that changes the default isolation of declarations. App targets often choose `@MainActor` as the default to reduce migration noise, but it changes behavior and diagnostics.
 
-Introduces a potential suspension point. At these points, the executing actor can change.
+## Strict concurrency checking
 
-### async let
-**Type**: Flow Control
-**Usage**: Start work asynchronously without awaiting immediately
-**Introduced**: SE-0317 async let bindings
+Compiler enforcement levels for Sendable and isolation diagnostics (minimal/targeted/complete). Raising the level typically reveals more issues and can trigger the “concurrency rabbit hole” unless migrated incrementally.
 
-```swift
-async let avatar = fetchAvatar()
-async let bio = fetchBio()
-let (a, b) = await (avatar, bio)  // Both run in parallel
-```
+## Sendable
 
-### @concurrent
-**Type**: Annotation
-**Usage**: Causes an async function to run on the global executor
-**Introduced**: SE-0461
+A marker protocol that indicates a type is safe to transfer across isolation boundaries. The compiler verifies stored properties and captured values for thread-safety.
 
-Forces a function to always run in the background, regardless of Approachable Concurrency settings.
+## @Sendable
 
-```swift
-@concurrent
-func processLargeFile() async -> Data { }
-```
+An annotation for function types/closures that can be executed concurrently. It tightens capture rules (captured values must be Sendable or safely transferred).
 
-### @globalActor
-**Type**: Annotation
-**Usage**: Marks an actor type as global
-**Introduced**: SE-0316 Global actors
+## Suspension point
 
-Makes an actor type usable as an annotation for static isolation.
+An `await` site where a task may suspend and later resume. After a suspension point, you must assume other work may have run and (for actors) state may have changed (reentrancy).
 
-### isolated
-**Type**: Keyword
-**Usage**: Defines static isolation via a function parameter
-**Introduced**: SE-0313
+## Reentrancy (actors)
 
-Essential for integrating concurrency into non-Sendable types.
+While an actor is suspended at an `await`, other tasks can enter the actor and mutate state. Code after `await` must not assume actor state is unchanged.
 
-```swift
-func doWork(isolation: isolated (any Actor)? = #isolation) async { }
-```
+## nonisolated
 
-### @isolated(any)
-**Type**: Annotation
-**Usage**: Inspect a function's static isolation at runtime
-**Introduced**: SE-0431
+Marks a declaration as not isolated to the surrounding actor/global actor. Use only when it truly does not touch isolated mutable state (typically immutable Sendable data).
 
-Allows inspecting the isolation of a function passed as a variable.
+## nonisolated(nonsending) (Swift 6.2+ behavior)
 
-### #isolation
-**Type**: Expression Macro
-**Usage**: Returns the static isolation as `(any Actor)?`
-**Introduced**: SE-0420
+An opt-out to prevent “sending” non-Sendable values across isolation while still allowing an async function to run in the caller’s isolation. Used to reduce Sendable friction when you do not need to hop executors.
 
-Used with isolated parameters to inherit calling isolation.
+## @concurrent (Swift 6.2+ behavior)
 
-### @_inheritActorContext
-**Type**: Parameter Annotation
-**Usage**: Applies isolation inheritance to a closure parameter
-**Introduced**: Internal
+An attribute used to explicitly opt a nonisolated async function into concurrent execution (i.e., not inheriting the caller’s actor). It is used during migration when enabling `NonisolatedNonsendingByDefault`.
+Also valid on `Task { @concurrent in ... }` to opt the task body out of the enclosing actor's isolation; pick this when the task's synchronous prefix (everything before the first `await`) does not need the main actor.
 
-Makes closures maintain the same isolation as where they were formed. Used by `Task`.
+## @preconcurrency
 
-### @MainActor
-**Type**: Annotation
-**Usage**: The global actor for the main thread
-**Introduced**: SE-0316 Global actors
+An annotation used to suppress Sendable-related diagnostics from a module that predates concurrency annotations. It reduces noise but shifts safety responsibility to you.
 
-References the shared MainActor instance for main thread isolation.
+## Region-based isolation / sending
 
-### nonisolated
-**Type**: Keyword
-**Usage**: Explicitly turns off actor isolation
-**Introduced**: SE-0313
+Mechanisms that model ownership transfer so certain non-Sendable values can be moved between regions safely. The `sending` keyword enforces that a value is no longer used after transfer.
 
-Opts out of actor isolation for a declaration.
+## AsyncSequence
 
-```swift
-actor MyActor {
-  nonisolated func publicInfo() -> String { "safe" }
-}
-```
-
-### nonisolated(nonsending)
-**Type**: Annotation
-**Usage**: Causes an async function to inherit caller's isolation
-**Introduced**: SE-0461
-
-Avoids the need for Sendable types by staying on the caller's actor.
-
-### nonisolated(unsafe)
-**Type**: Annotation
-**Usage**: Opts a declaration out of Sendable checking
-**Introduced**: SE-0306 Actors
-
-Targeted opt-out of isolation checks. Less error-prone than `@unchecked Sendable`.
+A protocol for types that provide asynchronous, sequential iteration over elements. Conforms to the `for await` loop pattern. Use for streaming data where elements arrive over time.
 
-### @preconcurrency
-**Type**: Attribute
-**Usage**: Interop between Swift 6 and pre-Swift 6 code
-**Introduced**: SE-0337, SE-0423
-
-For consuming pre-Swift 6 APIs or maintaining compatibility with Swift 5 mode.
+## AsyncStream
 
-### Sendable
-**Type**: Protocol
-**Usage**: Marker that a type can safely cross isolation boundaries
-**Introduced**: SE-0302
+A concrete implementation of `AsyncSequence` that bridges callback-based or delegate-based APIs to async/await. Provides `yield()` to emit values and `finish()` to complete the stream.
 
-```swift
-struct User: Sendable {
-  let id: Int
-  let name: String
-}
-```
+## Continuation
 
-### SendableMetatype
-**Type**: Protocol
-**Usage**: Marker that a metatype can safely cross isolation boundaries
-**Introduced**: SE-0470
+A mechanism to bridge callback-based APIs to async/await. `withCheckedContinuation` and `withCheckedThrowingContinuation` provide safe bridging with runtime checks. `withUnsafeContinuation` variants skip checks for performance-critical code.
 
-Required after Swift 6.2 for isolated conformances.
+## Task Local
 
-### @Sendable
-**Type**: Attribute
-**Usage**: Sendable for function types
-**Introduced**: SE-0302
+Task-scoped storage that propagates values through the task hierarchy automatically. Declared with `@TaskLocal` and accessed via the wrapper's static property. Child tasks inherit parent task locals.
 
-Same as Sendable but for closures and function types.
+## Cooperative thread pool
 
-### sending
-**Type**: Keyword
-**Usage**: Express one-way transfer of values
-**Introduced**: SE-0430
+Swift's threading model where tasks run on a limited pool of threads managed by the runtime. Tasks yield cooperatively at suspension points, allowing other tasks to run. Avoid blocking operations that would starve the pool.
 
-Encodes a strict promise about value behavior into function signatures.
+## Executor
 
-```swift
-func process(sending value: NonSendableType) async { }
-```
+The scheduling mechanism that determines where and when actor code runs. `MainActor` uses the main thread executor. Custom actors use the default executor unless a custom executor is specified.
 
-### @unchecked
-**Type**: Annotation
-**Usage**: Disables compiler checks for Sendable conformance
-**Introduced**: SE-0302
+## Structured concurrency
 
-For types with thread-safety implemented outside Swift's checking.
+A pattern where child tasks have a well-defined relationship to parent tasks. Child tasks must complete before the parent scope exits. Provides automatic cancellation propagation and prevents orphaned tasks. Implemented via `async let` and `TaskGroup`.
 
-```swift
-final class Cache: @unchecked Sendable {
-  private let lock = NSLock()
-  private var storage: [String: Data] = [:]
-}
-```
+## Isolation domain
 
-## Types and Concepts
+A boundary that protects mutable state from concurrent access. Each actor instance defines its own isolation domain. The `@MainActor` global actor defines a shared isolation domain for UI work. Code must cross isolation boundaries explicitly via `await`.
 
-### AsyncSequence
-**Type**: Protocol
-**Usage**: A series of values produced over time
-**Introduced**: SE-0298
-
-```swift
-for await notification in NotificationCenter.default.notifications(named: .userDidLogin) {
-  // Handle each notification as it arrives
-}
-```
-
-### Continuation
-**Type**: Type
-**Usage**: Bridge callback-based code to async/await
-**Introduced**: SE-0300
-
-```swift
-try await withCheckedThrowingContinuation { continuation in
-  legacyAPI { result in
-    continuation.resume(with: result)
-  }
-}
-```
-
-### Executor
-**Type**: Protocol
-**Usage**: API for controlling how actors execute code
-**Introduced**: SE-0304
-
-Rarely needed for day-to-day development. For advanced uses and performance.
-
-### Global Executor
-**Type**: Concept
-**Usage**: The executor that runs concurrent (non-isolated) code
-**Introduced**: SE-0338
-
-Unlike actor executors, this runs more than one thing simultaneously. Accessed via `async let`, `TaskGroup`, and `@concurrent`.
-
-### Isolation
-**Type**: Concept
-**Usage**: The form of thread-safety an actor provides
-**Introduced**: SE-0306 Actors
-
-Actors implement isolation, perhaps via a serial queue. Everything has well-defined static isolation.
-
-### Region-Based Isolation
-**Type**: Concept
-**Usage**: Compiler relaxes Sendable checking in specific circumstances
-**Introduced**: SE-0414
-
-Code-flow analysis proving that even non-Sendable types are used safely in specific patterns.
-
-### Task
-**Type**: Type
-**Usage**: Creates a new top-level context for async code
-**Introduced**: SE-0304 Structured concurrency
-
-Supports cancellation, priority, and accessing results.
-
-### TaskGroup
-**Type**: Type
-**Usage**: Manage multiple child tasks
-**Introduced**: SE-0304 Structured concurrency
-
-For dynamic parallel work with automatic cancellation propagation.
-
-### TaskLocal
-**Type**: Type
-**Usage**: Make values available across the current task
-**Introduced**: SE-0311 Task Local Values
-
-Analog of thread-local values for tasks.
-
-## Build Settings
-
-### SWIFT_DEFAULT_ACTOR_ISOLATION
-**Values**: `MainActor` | (empty)
-**Default**: `MainActor` for Xcode 26+ projects
-
-When set to `MainActor`, everything runs on MainActor unless explicitly marked otherwise.
-
-### SWIFT_APPROACHABLE_CONCURRENCY
-**Values**: `YES` | `NO`
-**Default**: `YES` for Xcode 26+ projects
-
-When enabled, `nonisolated async` functions stay on the caller's actor instead of hopping to background.
-
-## Quick Reference Table
-
-| Term | Purpose |
-|------|---------|
-| `async` | Function can suspend |
-| `await` | Suspension point |
-| `Task { }` | Start async work, inherits context |
-| `Task.detached { }` | Start async work, no inheritance |
-| `@MainActor` | Runs on main thread |
-| `actor` | Type with isolated mutable state |
-| `nonisolated` | Opts out of actor isolation |
-| `nonisolated(nonsending)` | Inherits caller's isolation |
-| `@concurrent` | Always run on background |
-| `Sendable` | Safe to cross isolation boundaries |
-| `sending` | One-way transfer of non-Sendable |
-| `async let` | Start parallel work |
-| `TaskGroup` | Dynamic parallel work |
-| `#isolation` | Get current isolation |
-| `isolated` | Parameter-based isolation |
+## Task priority
+
+A hint to the runtime about the relative importance of a task. Priorities include `.high`, `.medium`, `.low`, `.userInitiated`, `.utility`, and `.background`. Higher priority tasks are scheduled before lower priority ones. Priority can escalate when a high-priority task awaits a low-priority one.
+
+## Cancellation
+
+A cooperative mechanism to signal that a task should stop. Check `Task.isCancelled` or call `Task.checkCancellation()` (throws) in long-running work. Cancellation propagates to child tasks in structured concurrency.
+
+## Debounce
+
+Wait for a period of inactivity before emitting a value. Used to reduce API calls for rapid inputs like search fields. Implemented as `debounce(for:tolerance:clock:)` in AsyncAlgorithms.
+
+## Throttle
+
+Emit at most one value per time interval, discarding intermediate values. Used to prevent excessive calls from repeated actions like button taps. Implemented as `throttle(for:clock:reducing:)` in AsyncAlgorithms.
+
+## Merge (AsyncAlgorithms)
+
+Combine multiple asynchronous sequences into one, emitting values as they arrive from any source. Order is interleaved based on emission timing. Stable operator.
+
+## CombineLatest (AsyncAlgorithms)
+
+Combine multiple asynchronous sequences, emitting a tuple whenever any source emits a new value. Always uses the latest value from each sequence. Stable operator.
+
+## Zip (AsyncAlgorithms)
+
+Combine multiple asynchronous sequences by pairing elements in order. Waits for all sequences to emit before producing a tuple. Stable operator.
+
+## AsyncChannel
+
+An AsyncSequence with backpressure sending semantics. Allows multiple producers to send values safely to multiple consumers with flow control. Stable operator.
+
+## AsyncThrowingChannel
+
+Like AsyncChannel but can emit errors through the stream. Stable operator.
+
+## AsyncTimerSequence
+
+An AsyncSequence that emits a value at regular intervals. Replaces timer-based publishers and manual sleep loops. Stable operator.
+

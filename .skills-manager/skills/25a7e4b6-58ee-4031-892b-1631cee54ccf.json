@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "25a7e4b6-58ee-4031-892b-1631cee54ccf",
+  "path": "core-data-expert",
+  "path_key": "core-data-expert",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "avdlee/core-data-agent-skill/core-data-expert",
+    "subpath": "core-data-expert",
+    "branch": null
+  }
+}

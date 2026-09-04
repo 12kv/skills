@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "913077bb-33aa-4a92-af97-ae9c8320c5d0",
+  "path": "swift-concurrency",
+  "path_key": "swift-concurrency",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "avdlee/swift-concurrency-agent-skill/swift-concurrency",
+    "subpath": "swift-concurrency",
+    "branch": null
+  }
+}

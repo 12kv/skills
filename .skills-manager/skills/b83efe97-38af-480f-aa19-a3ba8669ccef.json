@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "b83efe97-38af-480f-aa19-a3ba8669ccef",
+  "path": "swift-testing-expert",
+  "path_key": "swift-testing-expert",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "avdlee/swift-testing-agent-skill/swift-testing-expert",
+    "subpath": "swift-testing-expert",
+    "branch": null
+  }
+}
