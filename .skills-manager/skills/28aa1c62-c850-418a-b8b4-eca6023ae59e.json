@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "28aa1c62-c850-418a-b8b4-eca6023ae59e",
+  "path": "skyline-overview",
+  "path_key": "skyline-overview",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "wechat-miniprogram/skyline-skills/skyline-overview",
+    "subpath": "skills/skyline-overview",
+    "branch": null
+  }
+}

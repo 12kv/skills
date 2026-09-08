@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "29dd0036-7b09-41ac-ad1b-a9043e6f28c0",
+  "path": "skyline-config",
+  "path_key": "skyline-config",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "wechat-miniprogram/skyline-skills/skyline-config",
+    "subpath": "skills/skyline-config",
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "6d1c2d32-ba8c-46c1-bbd7-6be0a75e82a6",
+  "path": "skyline-scroll-api",
+  "path_key": "skyline-scroll-api",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "wechat-miniprogram/skyline-skills/skyline-scroll-api",
+    "subpath": "skills/skyline-scroll-api",
+    "branch": null
+  }
+}

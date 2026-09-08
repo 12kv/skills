@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "619ca9f4-939d-46ae-a95f-4551c600821a",
+  "path": "skyline-components",
+  "path_key": "skyline-components",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "wechat-miniprogram/skyline-skills/skyline-components",
+    "subpath": "skills/skyline-components",
+    "branch": null
+  }
+}

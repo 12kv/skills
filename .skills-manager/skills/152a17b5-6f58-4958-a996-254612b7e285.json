@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "152a17b5-6f58-4958-a996-254612b7e285",
+  "path": "wechat-miniprogram-skill",
+  "path_key": "wechat-miniprogram-skill",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "gourdbaby/wechat-miniprogram-skill/wechat-miniprogram-skill",
+    "subpath": null,
+    "branch": null
+  }
+}

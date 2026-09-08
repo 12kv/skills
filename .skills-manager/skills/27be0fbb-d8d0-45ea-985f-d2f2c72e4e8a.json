@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "27be0fbb-d8d0-45ea-985f-d2f2c72e4e8a",
+  "path": "skyline-worklet",
+  "path_key": "skyline-worklet",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "wechat-miniprogram/skyline-skills/skyline-worklet",
+    "subpath": "skills/skyline-worklet",
+    "branch": null
+  }
+}

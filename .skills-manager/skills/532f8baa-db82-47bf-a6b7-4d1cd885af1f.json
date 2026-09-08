@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "532f8baa-db82-47bf-a6b7-4d1cd885af1f",
+  "path": "skyline-route",
+  "path_key": "skyline-route",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "wechat-miniprogram/skyline-skills/skyline-route",
+    "subpath": "skills/skyline-route",
+    "branch": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "72e3ce26-bbe2-456c-ab57-b1784c8f1dff",
+  "path": "skyline-wxss",
+  "path_key": "skyline-wxss",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "skillssh",
+    "ref": "wechat-miniprogram/skyline-skills/skyline-wxss",
+    "subpath": "skills/skyline-wxss",
+    "branch": null
+  }
+}
