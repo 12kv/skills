@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "skill_id": "cdbe1252-f2d4-45f4-8a7a-09029168e62e",
+  "path": "wechatide-skill",
+  "path_key": "wechatide-skill",
+  "enabled": true,
+  "tags": [],
+  "source": {
+    "type": "local",
+    "ref": null,
+    "subpath": null,
+    "branch": null
+  }
+}
